@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "TTS Web Reader",
+  "version": "1.0.0",
+  "description": "Read web pages out loud using local TTS",
+  "action": {
+    "default_title": "Read Page"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["<all_urls>"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

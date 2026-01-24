@@ -1,1 +1,5 @@
 pocket-tts
+fastapi
+uvicorn
+python-multipart
+scipy
